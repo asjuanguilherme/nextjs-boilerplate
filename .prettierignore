@@ -1,0 +1,5 @@
+.next
+.husky
+.prettierignore
+.eslintignore
+yarn.lock
