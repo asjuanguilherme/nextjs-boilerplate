@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app'
 import AppGlobalProps from 'types/AppGlobalProps'
 
 // Providers
-import { ThemeProvider } from 'context/ThemeContext'
+import { ThemeProvider } from 'contexts/ThemeContext'
 
 // Components
 import Layout from 'components/layout'
