@@ -1,6 +1,5 @@
 module.exports = plop => {
   plop.setGenerator('component', {
-    description: 'application component logic',
     prompts: [
       {
         type: 'input',
@@ -20,21 +19,33 @@ module.exports = plop => {
         default: 'div'
       }
     ],
-    actions: () => {
-      const actions = [
+    actions: [
+      {
+        type: 'add',
+        path: '../components/{{ dashCase category }}/{{ pascalCase name }}/index.tsx',
+        templateFile: './templates/component/index.tsx.hbs'
+      },
+      {
+        type: 'add',
+        path: '../components/{{ dashCase category }}/{{ pascalCase name }}/styles.ts',
+        templateFile: './templates/component/styles.ts.hbs'
+      }
+    ]
+  }),
+    plop.setGenerator('icon', {
+      prompts: [
+        {
+          type: 'input',
+          name: 'name',
+          message: 'Insert a name for the icon'
+        }
+      ],
+      actions: [
         {
           type: 'add',
-          path: '../components/{{ dashCase category }}/{{ pascalCase name }}/index.tsx',
-          templateFile: './templates/component/index.tsx.hbs'
-        },
-        {
-          type: 'add',
-          path: '../components/{{ dashCase category }}/{{ pascalCase name }}/styles.ts',
-          templateFile: './templates/component/styles.ts.hbs'
+          path: '../components/shared/icons/{{ pascalCase name }}.tsx',
+          templateFile: './templates/iconComponent.tsx.hbs'
         }
       ]
-
-      return actions
-    }
-  })
+    })
 }

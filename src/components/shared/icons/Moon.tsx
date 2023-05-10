@@ -1,6 +1,6 @@
 import createIconComponent from './utils/createIconComponent'
 
-const Moon = createIconComponent({
+const MoonIcon = createIconComponent({
   content: (
     <>
       <path d="m458 159-47-9-22-42-23 42-46 9 32 34-6 47 43-20 42 20-6-47zM402 331l-32-6-16-28-15 28-32 6 22 24-4 32 29-14 30 14-4-32z" />
@@ -10,4 +10,4 @@ const Moon = createIconComponent({
   viewBox: '0 0 512 512'
 })
 
-export default Moon
+export default MoonIcon
