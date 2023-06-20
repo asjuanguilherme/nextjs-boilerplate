@@ -12,12 +12,12 @@ const resets = css`
     box-sizing: border-box;
     font-weight: ${font.weight.regular};
     font-family: ${font.family.poppins};
-    font-size: 16px;
   }
 
   html {
     color: ${props => props.theme.colors.title};
     background-color: ${props => props.theme.colors.layers[0].background};
+    font-size: 16px;
   }
 
   html,
