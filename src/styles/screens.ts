@@ -9,17 +9,13 @@ export const breakpoints = {
   desktopL: 1536
 }
 
-export type BreakpointNames = keyof typeof breakpoints
-
-export const screens: Record<BreakpointNames, string> = (() => {
-  const breakpointNames = Object.keys(breakpoints) as Array<BreakpointNames>
-  const devices = {} as Record<BreakpointNames, string>
-
-  breakpointNames.forEach(breakpointName => {
-    devices[
-      breakpointName
-    ] = `@media screen and (min-width: ${breakpoints[breakpointName]}px)`
-  })
-
-  return devices
-})()
+export const screens = {
+  mobileS: `@media screen and (min-width: ${breakpoints.mobileS}px)`,
+  mobileM: `@media screen and (min-width: ${breakpoints.mobileM}px)`,
+  mobileL: `@media screen and (min-width: ${breakpoints.mobileL}px)`,
+  tabletS: `@media screen and (min-width: ${breakpoints.tabletS}px)`,
+  tablet: `@media screen and (min-width: ${breakpoints.tablet}px)`,
+  laptop: `@media screen and (min-width: ${breakpoints.laptop}px)`,
+  desktop: `@media screen and (min-width: ${breakpoints.desktop}px)`,
+  desktopL: `@media screen and (min-width: ${breakpoints.desktopL}px)`
+} as const
