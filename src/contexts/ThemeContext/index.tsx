@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from 'react'
 import {
   ThemeProvider as StyledComponentsThemeProvider,
   DefaultTheme
@@ -19,6 +25,14 @@ type ThemeProviderProps = {
 export const ThemeContext = createContext<ThemeContextProps>(
   {} as ThemeContextProps
 )
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext)
+
+  if (!context) throw new Error('useTheme must be used within a ThemeProvider.')
+
+  return context
+}
 
 export const ThemeProvider = ({
   children,
