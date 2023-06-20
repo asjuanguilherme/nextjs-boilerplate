@@ -1,6 +1,5 @@
 import { DefaultTheme } from 'styled-components'
 import Sun from 'components/shared/icons/Sun'
-import { colors } from 'styles/designSystemConfig'
 
 const light: DefaultTheme = {
   name: 'light',
@@ -9,7 +8,23 @@ const light: DefaultTheme = {
   colors: {
     title: '#1B1B1B',
     text: '#676767',
-    main: colors,
+    main: {
+      primary: {
+        light: '#FDA177',
+        normal: '#F47C46',
+        dark: '#BC5B30'
+      },
+      error: {
+        light: '#fca5a5',
+        normal: '#ef4444',
+        dark: '#b91c1c'
+      },
+      success: {
+        light: '#86efac',
+        normal: '#22c55e',
+        dark: '#15803d'
+      }
+    },
     layers: {
       0: {
         background: '#FFFFFF',
