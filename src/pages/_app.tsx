@@ -6,6 +6,7 @@ import AppGlobalProps from 'types/AppGlobalProps'
 
 // Providers
 import { ThemeProvider } from 'contexts/ThemeContext'
+import { ModalProvider } from 'contexts/ModalContext'
 
 // Components
 import Layout from 'components/layout'
@@ -16,9 +17,11 @@ const App = ({ Component, pageProps }: AppProps<AppGlobalProps>) => {
     <>
       <ThemeProvider storedTheme={pageProps.storedTheme}>
         <GlobalStyles />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ModalProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ModalProvider>
       </ThemeProvider>
     </>
   )

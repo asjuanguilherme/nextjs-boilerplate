@@ -13,20 +13,20 @@ const light: DefaultTheme = {
     main: mainColors,
     layers: {
       0: {
-        background: '#FFFFFF',
-        border: '#F3F3F3'
+        background: '#F2F2F2',
+        border: '#EAEAEA'
       },
       1: {
-        background: '#FAFAFA',
-        border: '#F5F5F5'
+        background: '#FFFFFF',
+        border: '#F0F0F0'
       },
       2: {
         background: '#F2F2F2',
         border: '#EAEAEA'
       },
       3: {
-        background: '#EAEAEA',
-        border: '#E3E3E3'
+        background: '#FFFFFF',
+        border: '#F0F0F0'
       }
     }
   }

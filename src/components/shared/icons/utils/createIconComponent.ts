@@ -5,7 +5,7 @@ export type IconComponentProps = {
   color?: string
   size?: string
   className?: string
-  styles?: CSSProperties
+  style?: CSSProperties
 }
 
 export type IconComponent = (props: IconComponentProps) => JSX.Element

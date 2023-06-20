@@ -3,13 +3,13 @@ import styled from 'styled-components'
 export const Footer = styled.footer`
   padding: 2rem 0;
   text-align: center;
-  background-color: #ff5000;
-  color: white;
+  color: ${props => props.theme.colors.text};
+  background-color: ${props => props.theme.colors.layers[1].background};
+  border-top: 1px solid ${props => props.theme.colors.layers[1].border};
 `
 
 export const Main = styled.main`
   flex: 1;
-  background: #eeeeee;
   padding-top: 89px;
 `
 
@@ -20,12 +20,14 @@ export const Header = styled.header`
   top: 0;
   left: 0;
   text-align: center;
-  background-color: #ff5000;
-  color: white;
+  color: ${props => props.theme.colors.title};
+  background-color: ${props => props.theme.colors.layers[1].background};
+  border-bottom: 1px solid ${props => props.theme.colors.layers[1].border};
 `
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: ${props => props.theme.colors.layers[0].background};
 `
