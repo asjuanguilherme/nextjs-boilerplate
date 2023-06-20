@@ -1,9 +1,10 @@
 import 'styled-components'
-import colors from 'styles/colors'
+import mainColors from 'styles/mainColors'
+import dark from 'styles/themes/dark'
 
 export type LayerIndex = 0 | 1 | 2 | 3
 
-export type Colors = keyof typeof Colors
+export type MainColorsKeys = keyof typeof mainColors
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -13,7 +14,8 @@ declare module 'styled-components' {
     colors: {
       title: string
       text: string
-      main: Record<MainColors, Record<'light' | 'normal' | 'dark', string>>
+      detail: string
+      main: Record<MainColorsKeys, Record<'light' | 'normal' | 'dark', string>>
       layers: Record<
         LayerIndex,
         {

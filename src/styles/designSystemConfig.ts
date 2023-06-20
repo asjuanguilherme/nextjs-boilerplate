@@ -29,7 +29,7 @@ export const font = {
   sizes: {
     smaller: '.75rem',
     small: '.875rem',
-    medium: '1rem',
+    default: '1rem',
     large: '1.25rem',
     larger: '1.5rem',
     xlarger: '2rem',
@@ -44,12 +44,20 @@ export const font = {
 } as const
 
 export const borderRadius = {
-  small: '.25rem',
-  medium: '.5rem',
-  large: '.75rem',
+  smaller: '.25rem',
+  small: '.5rem',
+  medium: '.75rem',
+  large: '1rem',
+  larger: '1.25rem',
   pill: '9999px',
   circle: '100%'
 } as const
+
+export const buttonSizes = {
+  smaller: '2rem',
+  small: '2.25rem',
+  default: '3rem'
+}
 
 export const zIndex = {
   navbar: 100,

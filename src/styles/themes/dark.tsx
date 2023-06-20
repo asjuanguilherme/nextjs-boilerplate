@@ -1,5 +1,6 @@
 import { DefaultTheme } from 'styled-components'
 import Moon from 'components/shared/icons/Moon'
+import mainColors from 'styles/mainColors'
 
 const dark: DefaultTheme = {
   name: 'dark',
@@ -8,23 +9,8 @@ const dark: DefaultTheme = {
   colors: {
     title: '#FFFFFF',
     text: '#FFFFFF90',
-    main: {
-      primary: {
-        light: '#FDA177',
-        normal: '#F47C46',
-        dark: '#BC5B30'
-      },
-      error: {
-        light: '#fca5a5',
-        normal: '#ef4444',
-        dark: '#b91c1c'
-      },
-      success: {
-        light: '#86efac',
-        normal: '#22c55e',
-        dark: '#15803d'
-      }
-    },
+    detail: '#FFFFFF80',
+    main: mainColors,
     layers: {
       0: {
         background: '#000000',
