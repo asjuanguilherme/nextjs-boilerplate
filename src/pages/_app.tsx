@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app'
 import AppGlobalProps from 'types/AppGlobalProps'
 
 // Providers
-import { ThemeProvider } from 'contexts/ThemeContext'
+import { AppThemeProvider } from 'contexts/AppThemeContext'
 import { ModalProvider } from 'contexts/ModalContext'
 
 // Components
@@ -15,14 +15,14 @@ import GlobalStyles from 'styles/GlobalStyles'
 const App = ({ Component, pageProps }: AppProps<AppGlobalProps>) => {
   return (
     <>
-      <ThemeProvider storedTheme={pageProps.storedTheme}>
+      <AppThemeProvider storedTheme={pageProps.storedTheme}>
         <GlobalStyles />
         <ModalProvider>
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </ModalProvider>
-      </ThemeProvider>
+      </AppThemeProvider>
     </>
   )
 }

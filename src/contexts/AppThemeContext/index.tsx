@@ -13,31 +13,31 @@ import { DEFAULT_THEME, storeThemeStateToCookies } from './utils'
 import themes, { ThemeName } from 'styles/themes'
 import Head from 'next/head'
 
-type ThemeContextProps = DefaultTheme & {
+type AppThemeContextProps = DefaultTheme & {
   themeToggle: () => void
 }
 
-type ThemeProviderProps = {
+type AppThemeProviderProps = {
   children: ReactNode
   storedTheme: ThemeName
 }
 
-export const ThemeContext = createContext<ThemeContextProps>(
-  {} as ThemeContextProps
+export const AppThemeContext = createContext<AppThemeContextProps>(
+  {} as AppThemeContextProps
 )
 
-export const useTheme = () => {
-  const context = useContext(ThemeContext)
+export const useAppTheme = () => {
+  const context = useContext(AppThemeContext)
 
   if (!context) throw new Error('useTheme must be used within a ThemeProvider.')
 
   return context
 }
 
-export const ThemeProvider = ({
+export const AppThemeProvider = ({
   children,
   storedTheme = DEFAULT_THEME
-}: ThemeProviderProps) => {
+}: AppThemeProviderProps) => {
   const [selectedTheme, setSelectedTheme] = useState<ThemeName>(storedTheme)
 
   const themeToggle = () => {
@@ -50,7 +50,7 @@ export const ThemeProvider = ({
   }, [selectedTheme])
 
   return (
-    <ThemeContext.Provider value={{ ...themes[selectedTheme], themeToggle }}>
+    <AppThemeContext.Provider value={{ ...themes[selectedTheme], themeToggle }}>
       <Head>
         <meta
           name="theme-color"
@@ -60,6 +60,8 @@ export const ThemeProvider = ({
       <StyledComponentsThemeProvider theme={themes[selectedTheme]}>
         {children}
       </StyledComponentsThemeProvider>
-    </ThemeContext.Provider>
+    </AppThemeContext.Provider>
   )
 }
+
+export default AppThemeProvider
