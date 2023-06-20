@@ -10,11 +10,11 @@ export const Footer = styled.footer`
 
 export const Main = styled.main`
   flex: 1;
-  padding-top: 89px;
+  padding-top: 113px;
 `
 
 export const Header = styled.header`
-  padding: 2rem 0;
+  padding: 2rem;
   width: 100%;
   position: fixed;
   top: 0;
@@ -23,6 +23,9 @@ export const Header = styled.header`
   color: ${props => props.theme.colors.title};
   background-color: ${props => props.theme.colors.layers[1].background};
   border-bottom: 1px solid ${props => props.theme.colors.layers[1].border};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 export const Wrapper = styled.div`
