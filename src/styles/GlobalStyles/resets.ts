@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
 import { font } from 'styles/designSystemConfig'
+import { screens } from 'styles/screens'
 
 const resets = css`
   * {
@@ -14,10 +15,27 @@ const resets = css`
     font-family: ${font.family.poppins};
   }
 
+  ::selection {
+    color: white;
+    background-color: ${props => props.theme.colors.main.primary.normal};
+  }
+
+  a {
+    color: inherit;
+  }
+
   html {
     color: ${props => props.theme.colors.title};
     background-color: ${props => props.theme.colors.layers[0].background};
-    font-size: 16px;
+    font-size: 12px;
+
+    ${screens.mobileM} {
+      font-size: 14px;
+    }
+
+    ${screens.tablet} {
+      font-size: 16px;
+    }
   }
 
   html,
