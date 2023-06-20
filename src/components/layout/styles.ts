@@ -10,6 +10,7 @@ export const Footer = styled.footer`
 export const Main = styled.main`
   flex: 1;
   background: #eeeeee;
+  padding-top: 89px;
 `
 
 export const Header = styled.header`
